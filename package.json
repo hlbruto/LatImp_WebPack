@@ -6,7 +6,9 @@
   "author": "Henry&Heidy",
   "private": true,
   "scripts": {
-    "start": "yarn quasar dev",
+    "build": "quasar build",
+    "start": "node server.js",
+    "heroku-postbuild": "yarn && yarn build",
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0"
@@ -15,10 +17,13 @@
     "@quasar/extras": "^1.0.0",
     "@vueauth/strapi": "^1.0.0-alpha.6",
     "axios": "^0.21.1",
+    "connect-history-api-fallback": "^2.0.0",
     "cordova": "^11.0.0",
     "core-js": "^3.6.5",
+    "express": "^4.18.1",
     "global": "^4.4.0",
     "quasar": "^2.6.0",
+    "serve-static": "^1.15.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0",
     "vuex": "^4.0.1"
