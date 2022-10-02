@@ -9,7 +9,7 @@ import axios from "axios";
 // for each client)
 const api = axios.create({
   //baseURL: "http://localhost:1337"
-  baseURL: "http://latimpar.herokuapp.com",
+  baseURL: "https://latimpar.herokuapp.com",
 });
 
 export default boot(({ app }) => {
