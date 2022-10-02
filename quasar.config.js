@@ -81,7 +81,8 @@ module.exports = configure(function (ctx) {
       //port: ctx.mode.spa ? 8000 : ctx.mode.pwa ? 9000 : 9090,
       proxy: {
         "/api": {
-          target: "https://latimpar.herokuapp.com",
+          // target: "https://latimpar.herokuapp.com",
+          target: "http://localhost:1337",
           changeOrigin: true,
         },
       },
