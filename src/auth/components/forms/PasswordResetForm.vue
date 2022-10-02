@@ -1,69 +1,74 @@
 <script setup>
-import { QInput, QForm } from 'quasar'
+import { QInput, QForm } from "quasar";
 
 defineProps({
   email: {
     required: true,
-    type: String
+    type: String,
   },
   password: {
     required: true,
-    type: String
+    type: String,
   },
   passwordConfirmation: {
     required: true,
-    type: String
+    type: String,
   },
   validationErrors: {
     required: false,
     type: Object,
-    default () {
-      return {}
-    }
-  }
-})
+    default() {
+      return {};
+    },
+  },
+});
 
 const emit = defineEmits([
-  'update:email',
-  'update:password',
-  'update:passwordConfirmation'
-])
+  "update:email",
+  "update:password",
+  "update:passwordConfirmation",
+]);
 </script>
 
 <template>
   <q-form>
     <slot name="top" />
     <q-input
+      dense
       filled
-      label="Email"
+      label="Correo electrónico"
       :model-value="email"
       :error="!!validationErrors?.['email']"
       :error-message="validationErrors?.['email']?.[0]"
       class="q-mb-md"
       hide-bottom-space
-      @update:model-value="value => emit('update:email', value)"
+      @update:model-value="(value) => emit('update:email', value)"
     />
     <q-input
+      dense
       filled
-      label="Password"
+      label="Contraseña"
       :model-value="password"
       :error="!!validationErrors?.['password']"
       :error-message="validationErrors?.['password']?.[0]"
       class="q-mb-xs"
       type="password"
       hide-bottom-space
-      @update:model-value="value => emit('update:password', value)"
+      @update:model-value="(value) => emit('update:password', value)"
     />
     <q-input
+      dense
       filled
-      label="Confirm Password"
+      label="Confirmar Contraseña"
       :model-value="passwordConfirmation"
       :error="!!validationErrors?.['password_confirmation']"
       :error-message="validationErrors?.['password_confirmation']?.[0]"
       class="q-mb-md"
       type="password"
       hide-bottom-space
-      @update:model-value="value => emit('update:passwordConfirmation', value)"
+      @update:model-value="
+        (value) => emit('update:passwordConfirmation', value)
+      "
     />
     <slot name="bottom" />
   </q-form>
