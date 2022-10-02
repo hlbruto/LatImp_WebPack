@@ -1,8 +1,8 @@
 <script setup>
-import { QCard, QCardSection, QBtn } from "quasar";
-import useRegister from "auth/composables/useRegister";
-import AuthRegisterForm from "src/auth/components/forms/RegisterForm.vue";
-import AuthErrorsBanner from "./ErrorsBanner.vue";
+import { QCard, QCardSection, QBtn } from 'quasar'
+import useRegister from 'auth/composables/useRegister'
+import AuthRegisterForm from 'src/auth/components/forms/RegisterForm.vue'
+import AuthErrorsBanner from './ErrorsBanner.vue'
 
 const {
   form,
@@ -11,8 +11,9 @@ const {
   onRegisterClicked,
   validationErrors,
   hasValidationErrors,
-  registered,
-} = useRegister();
+  registered
+} = useRegister()
+
 </script>
 
 <template>
@@ -29,7 +30,10 @@ const {
       />
 
       <!-- Errors -->
-      <div v-if="!hasValidationErrors" class="q-mb-sm">
+      <div
+        v-if="!hasValidationErrors"
+        class="q-mb-sm"
+      >
         <AuthErrorsBanner :errors="errors" />
       </div>
     </q-card-section>
@@ -45,10 +49,15 @@ const {
       @click="onRegisterClicked"
     />
 
-    <q-dialog :model-value="registered" persistent>
+    <q-dialog
+      :model-value="registered"
+      persistent
+    >
       <q-card>
         <q-card-section>
-          <h5 class="q-my-md">Account Created!</h5>
+          <h5 class="q-my-md">
+            Account Created!
+          </h5>
           <div class="q-my-md">
             Look for a confirmation email in your inbox to get started!
           </div>

@@ -1,8 +1,8 @@
 <script setup>
-import useLogin from "auth/composables/useLogin";
-import AuthLoginForm from "src/auth/components/forms/LoginForm.vue";
-import AuthErrorsBanner from "src/auth/components/ErrorsBanner.vue";
-import { ref } from "vue";
+import useLogin from 'auth/composables/useLogin'
+import AuthLoginForm from 'src/auth/components/forms/LoginForm.vue'
+import AuthErrorsBanner from 'src/auth/components/ErrorsBanner.vue'
+import { ref } from 'vue'
 
 const {
   isReauthenticating,
@@ -13,17 +13,17 @@ const {
   errors,
   loading,
   resetForm,
-  attemptSetEmailOnForm,
-} = useLogin();
+  attemptSetEmailOnForm
+} = useLogin()
 
-isReauthenticating.value = true;
-const dialogComponent = ref();
-attemptSetEmailOnForm();
+isReauthenticating.value = true
+const dialogComponent = ref()
+attemptSetEmailOnForm()
 
-async function handleLogin() {
-  await login();
+async function handleLogin () {
+  await login()
   if (!hasErrors.value) {
-    dialogComponent.value.hide();
+    dialogComponent.value.hide()
   }
 }
 </script>
@@ -34,19 +34,27 @@ async function handleLogin() {
     @hide="resetForm"
     @show="attemptSetEmailOnForm"
   >
-    <q-card style="max-width: 300px" class="full-width">
+    <q-card
+      style="max-width: 300px;"
+      class="full-width"
+    >
       <q-toolbar>
-        <q-toolbar-title>Confirmar Identidad</q-toolbar-title>
-        <q-btn icon="question_mark" color="primary" size="sm" round flat>
+        <q-toolbar-title>Confirm Identity</q-toolbar-title>
+        <q-btn
+          icon="question_mark"
+          color="primary"
+          size="sm"
+          round
+          flat
+        >
           <q-tooltip
             class="bg-primary"
             max-width="300px"
-            style="font-size: 1.2em"
+            style="font-size: 1.2em;"
             anchor="bottom right"
             self="top right"
           >
-            When making sensitive changes to your account, we ask you to login
-            again if it's been a while.
+            When making sensitive changes to your account, we ask you to login again if it's been a while.
           </q-tooltip>
         </q-btn>
       </q-toolbar>
@@ -56,11 +64,14 @@ async function handleLogin() {
           v-model:password="form.password"
           :validation-errors="validationErrors"
         />
-        <AuthErrorsBanner v-if="hasErrors" :errors="errors" />
+        <AuthErrorsBanner
+          v-if="hasErrors"
+          :errors="errors"
+        />
       </q-card-section>
       <q-btn
         class="full-width"
-        label="Entrar"
+        label="Login"
         color="primary"
         :loading="loading"
         @click="handleLogin"

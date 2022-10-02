@@ -1,21 +1,19 @@
-import { useIdentityPasswordLogout } from "@vueauth/core";
-import { useRouter } from "vue-router";
-import { useQuasar } from "quasar";
+import { useIdentityPasswordLogout } from '@vueauth/core'
+import { useRouter } from 'vue-router'
 
 export default () => {
-  const router = useRouter();
-  const $q = useQuasar();
+  const router = useRouter()
 
-  const { logout, loading } = useIdentityPasswordLogout();
+  const { logout, loading } = useIdentityPasswordLogout()
 
-  async function onLogoutClicked() {
-    await logout();
-
-    // Eliminar todas las claves
-    $q.localStorage.clear();
-
-    router.push("/");
+  async function onLogoutClicked () {
+    await logout()
+    router.push('/login')
   }
 
-  return { logout, loading, onLogoutClicked };
-};
+  return {
+    logout,
+    loading,
+    onLogoutClicked
+  }
+}

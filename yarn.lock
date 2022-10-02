@@ -1666,7 +1666,7 @@
 
 "@vueauth/quasar-app-extension-auth@^1.0.0-alpha.29":
   version "1.0.0-alpha.29"
-  resolved "https://registry.npmjs.org/@vueauth/quasar-app-extension-auth/-/quasar-app-extension-auth-1.0.0-alpha.29.tgz"
+  resolved "https://registry.yarnpkg.com/@vueauth/quasar-app-extension-auth/-/quasar-app-extension-auth-1.0.0-alpha.29.tgz#588200e4e9a519f47b9ad7d54ca271ee4ad24a8e"
   integrity sha512-m1KrqN76eGSOcCbaq5HH0GWGZh97bpzCRvD8R2efoxzCzn7qJwFbEeRZGhrnaxjYrjJ9VcT4rcKM9Pq7gDAksw==
   dependencies:
     "@vueauth/quasar-ui-auth" "^1.0.0-alpha.29"

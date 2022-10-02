@@ -1,8 +1,8 @@
 <script setup>
-import { QCard, QCardSection, QBtn } from "quasar";
-import AuthLoginForm from "src/auth/components/forms/LoginForm.vue";
-import useLogin from "auth/composables/useLogin";
-import AuthErrorsBanner from "./ErrorsBanner.vue";
+import { QCard, QCardSection, QBtn } from 'quasar'
+import AuthLoginForm from 'src/auth/components/forms/LoginForm.vue'
+import useLogin from 'auth/composables/useLogin'
+import AuthErrorsBanner from './ErrorsBanner.vue'
 
 const {
   onLoginClicked,
@@ -10,8 +10,8 @@ const {
   loading,
   errors,
   validationErrors,
-  hasValidationErrors,
-} = useLogin();
+  hasValidationErrors
+} = useLogin()
 </script>
 
 <template>
@@ -32,11 +32,10 @@ const {
 
     <!-- Login Button -->
     <q-btn
-      dense
       :loading="loading"
       class="full-width"
       color="primary"
-      label="Entrar"
+      label="login"
       unelevated
       @click="onLoginClicked"
     />
