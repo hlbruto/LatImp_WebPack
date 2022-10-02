@@ -17,6 +17,8 @@
     "@quasar/app-webpack": "^3.0.0",
     "@quasar/cli": "^1.3.2",
     "@quasar/extras": "^1.0.0",
+    "@quasar/quasar-app-extension-qmediaplayer": "^2.0.0-beta.6",
+    "@vueauth/quasar-app-extension-auth": "^1.0.0-alpha.29",
     "@vueauth/strapi": "^1.0.0-alpha.6",
     "axios": "^0.21.1",
     "connect-history-api-fallback": "^2.0.0",
