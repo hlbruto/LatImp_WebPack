@@ -14,6 +14,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@quasar/cli": "^1.3.2",
     "@quasar/extras": "^1.0.0",
     "@vueauth/strapi": "^1.0.0-alpha.6",
     "axios": "^0.21.1",
