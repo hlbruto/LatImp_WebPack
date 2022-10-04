@@ -42,13 +42,10 @@ export default () => {
   }
 
   async function autenticarConToken() {
-    const { data } = await api.post(
-      "https://latimpar.herokuapp.com/api/auth/local",
-      {
-        identifier: form.value.email,
-        password: form.value.password,
-      }
-    );
+    const { data } = await api.post("/api/auth/local", {
+      identifier: form.value.email,
+      password: form.value.password,
+    });
 
     $q.localStorage.set("jwt", data.jwt); //para guardar el token
 
