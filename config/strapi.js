@@ -1,4 +1,8 @@
-import { makeFetchRequester, useVueUseAuthState, useLocalStorageTokenRepo } from '@vueauth/strapi'
+import {
+  makeFetchRequester,
+  useVueUseAuthState,
+  useLocalStorageTokenRepo,
+} from "@vueauth/strapi";
 
 export default {
   /**
@@ -28,11 +32,18 @@ export default {
    * course configure your own.
    */
   endpoints: {
-    login: 'api/auth/local',
-    register: 'api/auth/local/register',
-    getUser: 'api/users/me',
-    resetPassword: 'api/auth/reset-password',
-    forgotPassword: 'api/auth/forgot-password',
-    changePassword: 'api/update-password'
-  }
-}
+    login: "https://latimpar.herokuapp.com/api/auth/local",
+    register: "https://latimpar.herokuapp.com/api/auth/local/register",
+    getUser: "https://latimpar.herokuapp.com/api/users/me",
+    resetPassword: "https://latimpar.herokuapp.com/api/auth/reset-password",
+    forgotPassword: "https://latimpar.herokuapp.com/api/auth/forgot-password",
+    changePassword: "https://latimpar.herokuapp.com/api/update-password",
+
+    /* login: "http://localhost:1337/api/auth/local",
+    register: "http://localhost:1337/api/auth/local/register",
+    getUser: "http://localhost:1337/api/users/me",
+    resetPassword: "http://localhost:1337/api/auth/reset-password",
+    forgotPassword: "http://localhost:1337/api/auth/forgot-password",
+    changePassword: "http://localhost:1337/api/update-password", */
+  },
+};

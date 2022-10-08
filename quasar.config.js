@@ -87,6 +87,16 @@ module.exports = configure(function (ctx) {
         },
       },
     },
+    Server: {
+      //port: ctx.mode.spa ? 8000 : ctx.mode.pwa ? 9000 : 9090,
+      proxy: {
+        "/api": {
+          target: "https://latimpar.herokuapp.com",
+          // target: "http://localhost:1337",
+          changeOrigin: true,
+        },
+      },
+    },
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
     framework: {
