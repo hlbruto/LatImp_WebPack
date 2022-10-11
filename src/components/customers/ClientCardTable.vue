@@ -49,7 +49,7 @@
         <div
           class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 row justify-center"
         >
-          <q-card>
+          <q-card class="my-card">
             <q-card-section>
               <q-item-label class="q-mb-sm">
                 ID:
@@ -73,9 +73,9 @@
                     <q-item-label>Email:</q-item-label>
                   </q-item-section>
                   <q-item-section side>
-                    <q-item-label>{{
-                      props.row.attributes.email
-                    }}</q-item-label>
+                    <q-item-label>
+                      {{ props.row.attributes.email }}
+                    </q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>
@@ -372,3 +372,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="sass" scoped>
+.my-card-user
+  width: 100%
+  max-width: 250px
+</style>

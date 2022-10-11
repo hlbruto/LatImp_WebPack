@@ -1,14 +1,14 @@
 import { boot } from "quasar/wrappers";
 
 export default boot(({ router }) => {
-  router.addRoute("/", {
+  /* router.addRoute("/", {
     name: "auth.register",
     path: "/register",
     meta: {
       unauthOnly: true,
     },
     component: () => import("src/auth/pages/IdentityPasswordRegisterPage.vue"),
-  });
+  }); */
 
   router.addRoute("/", {
     name: "auth.login",
@@ -19,7 +19,7 @@ export default boot(({ router }) => {
     component: () => import("src/auth/pages/IdentityPasswordLoginPage.vue"),
   });
 
-  router.addRoute("/", {
+  /* router.addRoute("/", {
     name: "auth.requestPasswordReset",
     path: "/forgot-password",
     meta: {
@@ -36,7 +36,7 @@ export default boot(({ router }) => {
       unauthOnly: true,
     },
     component: () => import("src/auth/pages/PasswordResetViaEmailPage.vue"),
-  });
+  }); */
 
   router.addRoute("/", {
     path: "/",
@@ -46,49 +46,31 @@ export default boot(({ router }) => {
         path: "/index",
         name: "index",
         component: () => import("src/pages/IndexPage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
       {
         path: "/videos",
         name: "videos",
         component: () => import("src/pages/VideoPage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
       {
         path: "/favoritos",
         name: "favoritos",
         component: () => import("src/pages/FavoritePage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
       {
         path: "/podcast",
         name: "podcast",
         component: () => import("src/pages/PodcastPage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
       {
         path: "/usuarios",
         name: "usuarios",
         component: () => import("src/pages/UsersPage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
       {
         path: "/clientes",
         name: "clientes",
         component: () => import("src/pages/CustomerPage.vue"),
-        meta: {
-          authOnly: true,
-        },
       },
     ],
   });

@@ -1,5 +1,5 @@
 const routes = [
-  {
+  /* {
     path: "/",
     component: () => import("auth/pages/IdentityPasswordLoginPage.vue"),
     children: [
@@ -8,7 +8,7 @@ const routes = [
         component: () => import("layouts/AuthenticatedLayout.vue"),
       },
     ],
-  },
+  }, */
 
   // Always leave this as last one,
   // but you can also remove it

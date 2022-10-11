@@ -309,7 +309,7 @@ export default defineComponent({
           loading.value = false;
 
           for (let index = 0; index < res.data.length; index++) {
-            if (res.data[index].id !== idUser.id) {
+            if (res.data[index].id !== idUser.id && res.data[index].id !== 2) {
               list.value.push(res.data[index]);
             }
           }

@@ -50,11 +50,11 @@
         <div
           class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 row justify-center"
         >
-          <q-card>
+          <q-card class="my-card-user">
             <q-card-section>
               <q-item-label class="q-mb-sm">
                 ID:
-                <strong class="q-ml-md">{{ props.row.id_user }}</strong>
+                <strong>{{ props.row.id_user }}</strong>
               </q-item-label>
 
               <q-separator />
@@ -204,7 +204,7 @@ const columns = [
   {
     name: "email",
     required: true,
-    label: "Correo",
+    label: "",
     align: "left",
     field: "email",
     sortable: true,
@@ -310,7 +310,7 @@ export default defineComponent({
           loading.value = false;
 
           for (let index = 0; index < res.data.length; index++) {
-            if (res.data[index].id !== idUser.id) {
+            if (res.data[index].id !== idUser.id && res.data[index].id !== 2) {
               list.value.push(res.data[index]);
             }
           }
@@ -334,8 +334,8 @@ export default defineComponent({
       id_user.value = usuario.id_user;
       nombre.value = usuario.name;
       email.value = usuario.email;
-      contrasenna.value = "";
       data.value.password = usuario.password;
+      contrasenna.value = "";
       dialogo.value = true;
     };
 
@@ -435,3 +435,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="sass" scoped>
+.my-card-user
+  width: 100%
+  max-width: 250px
+</style>

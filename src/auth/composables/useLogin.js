@@ -33,7 +33,7 @@ export default () => {
   });
 
   async function onLoginClicked() {
-    console.log("hey", form.value.email, form.value.password);
+    $q.localStorage.clear();
     resetErrors();
     await login();
     if (!hasErrors.value) {
@@ -43,23 +43,17 @@ export default () => {
   }
 
   async function autenticarConToken() {
-    console.log("entra a autenticar con");
     const { data } = await api.post("/api/auth/local", {
       identifier: form.value.email,
       password: form.value.password,
     });
-
     $q.localStorage.clear();
     $q.localStorage.set("jwt", data.jwt); //para guardar el token
-    console.log("1", data.jwt);
-    console.log("2", authorization.value);
-
     authorization.value = {
       headers: {
         Authorization: `Bearer ${data.jwt}`,
       },
     };
-
     llenarDatosUser();
   }
 
@@ -69,7 +63,6 @@ export default () => {
 
   async function llenarDatosUser() {
     const jwt = $q.localStorage.getItem("jwt");
-    console.log("data", jwt);
     await api
       .get(`/api/users/me?populate=*`, {
         headers: {
@@ -81,8 +74,6 @@ export default () => {
         $q.localStorage.set("user", res.data);
         $q.localStorage.set("role", res.data.role.name);
         $q.localStorage.set("favoritos", res.data.favoritos);
-
-        console.log("este", res.data);
       });
     router.push({ name: "index" });
   }
