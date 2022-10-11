@@ -1,5 +1,6 @@
 <script setup>
 import { QInput, QForm } from "quasar";
+import { ref } from "vue";
 
 defineProps({
   email: {
@@ -19,7 +20,7 @@ defineProps({
   },
 });
 
-const isPwd = false;
+const isPwd = ref(true);
 
 const emit = defineEmits(["update:email", "update:password"]);
 </script>

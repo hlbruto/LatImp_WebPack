@@ -39,11 +39,11 @@ export default boot(({ router }) => {
   });
 
   router.addRoute("/", {
-    path: "/index",
+    path: "/",
     component: () => import("layouts/AuthenticatedLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/index",
         name: "index",
         component: () => import("src/pages/IndexPage.vue"),
         meta: {

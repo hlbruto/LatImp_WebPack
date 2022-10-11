@@ -60,13 +60,11 @@ import { useStore } from "vuex";
 import { api } from "src/boot/axios";
 import { computed, ref, defineComponent } from "vue";
 import { useQuasar } from "quasar";
-import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
     const store = useStore();
     const $q = useQuasar();
-    const router = useRouter();
 
     const model = ref("");
     const favoritos = ref(null);
